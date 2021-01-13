@@ -6,7 +6,7 @@ A virtual community to help connect professionals with similar skills, interests
     has_many :memberships
     has_many :groups, through :memberships
     email
-    password
+    password_digest
     profession
     years_of_experience
     skills
@@ -14,18 +14,23 @@ A virtual community to help connect professionals with similar skills, interests
 #Group
     has_many :memberships
     has_many :users, through :memberships
-    name
+    title
+    description
+    rules
     user_count
     creation_date
-    description
 
 
 #Membership
 
     belongs_to :user
     belongs_to :group
-    join_date
-    member_id
+    join_date (think of something better)
+    moderator (boolean)
+    ##member_id
+
+
+#############Do later##############
 
 #Post
 

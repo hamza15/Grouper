@@ -1,0 +1,33 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@user, url: '/signup') do |f| %>
+
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br>
+    <br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <br>
+
+    <%= f.label :profession %>
+    <%= f.text_field :profession %>
+    <br>
+    <br>
+
+    <%= f.label :years_of_experience %>
+    <%= f.text_field :years_of_experience %>
+    <br>
+    <br>
+
+    <%= f.label :skills %>
+    <%= f.text_field :skills %>
+    <br>
+    <br>
+    
+    <%= f.submit 'Submit'%>
+
+<% end %>
