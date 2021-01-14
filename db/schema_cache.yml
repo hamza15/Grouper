@@ -1,0 +1,402 @@
+--- !ruby/object:ActiveRecord::ConnectionAdapters::SchemaCache
+columns:
+  schema_migrations:
+  - &1 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: version
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  ar_internal_metadata:
+  - &2 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: key
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &3 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: value
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &4 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: created_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &5 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: updated_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  users:
+  - &6 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &7 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: username
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &8 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: email
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &9 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: password_digest
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &10 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: profession
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &11 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: years_of_experience
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &12 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: skills
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: text
+      type: :text
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &13 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: created_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &14 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: updated_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  groups:
+  - &15 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &16 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: title
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &17 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: description
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: varchar
+      type: :string
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &18 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: rules
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: text
+      type: :text
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &19 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: user_count
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &20 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: creation_date
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime
+      type: :datetime
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  memberships:
+  - &21 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &22 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: user_id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &23 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: group_id
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: integer
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &24 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: moderator
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: boolean
+      type: :boolean
+      limit:
+      precision:
+      scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - &25 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: created_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+  - &26 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: updated_at
+    sql_type_metadata: !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: datetime(6)
+      type: :datetime
+      limit:
+      precision: 6
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
+columns_hash:
+  schema_migrations:
+    version: *1
+  ar_internal_metadata:
+    key: *2
+    value: *3
+    created_at: *4
+    updated_at: *5
+  users:
+    id: *6
+    username: *7
+    email: *8
+    password_digest: *9
+    profession: *10
+    years_of_experience: *11
+    skills: *12
+    created_at: *13
+    updated_at: *14
+  groups:
+    id: *15
+    title: *16
+    description: *17
+    rules: *18
+    user_count: *19
+    creation_date: *20
+  memberships:
+    id: *21
+    user_id: *22
+    group_id: *23
+    moderator: *24
+    created_at: *25
+    updated_at: *26
+primary_keys:
+  schema_migrations: version
+  ar_internal_metadata: key
+  users: id
+  groups: id
+  memberships: id
+data_sources:
+  schema_migrations: true
+  ar_internal_metadata: true
+  users: true
+  groups: true
+  memberships: true
+indexes:
+  schema_migrations: []
+  ar_internal_metadata: []
+  users: []
+  groups: []
+  memberships: []
+version: 20210113094809
+database_version: !ruby/object:ActiveRecord::ConnectionAdapters::AbstractAdapter::Version
+  version:
+  - 3
+  - 33
+  - 0
+  full_version_string:
