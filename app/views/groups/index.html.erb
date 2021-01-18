@@ -1,0 +1,14 @@
+<h1>Groups</h1>
+
+<ul>
+<% @groups.each do |group| %>
+
+    <% if current_user.id == group.user.id %>
+        <h2>Yours Groups: </h2><br>
+        <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li><br><br>
+    <% else %>
+        <h2>Discover Groups: </h2><br>
+        <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li>
+    <% end %>
+<% end %>
+</ul> 

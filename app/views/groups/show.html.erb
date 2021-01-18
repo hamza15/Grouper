@@ -1,0 +1,15 @@
+<h1>Welcome to <%= @group.title %> </h1>
+<br>
+<br>
+
+<p1>The rules for the group are as follows: </p1>
+
+<ul>
+    <b><li><%= @group.rules %></li>
+</ul>
+
+<h3>Group Moderator: </h3>
+
+<ul>
+    <b><li><%= @group.user.username %></li>
+</ul>

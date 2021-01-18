@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2021_01_14_011711) do
     t.string "title"
     t.string "description"
     t.text "rules"
-    t.integer "user_count"
+    t.integer "user_count", default: 1
     t.datetime "creation_date"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_011711) do
     t.boolean "moderator"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +43,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_011711) do
     t.string "username"
   end
 
+  add_foreign_key "groups", "users"
+  add_foreign_key "memberships", "groups"
+  add_foreign_key "memberships", "users"
 end
