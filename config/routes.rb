@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-
+  get 'auth/github', as: "github_login"
+  get '/auth/:provider/callback', to: 'sessions#create'
   #resources :memberships
   
   # MOST LIKELY SOLUTION
