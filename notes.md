@@ -3,8 +3,9 @@ Grouper models
 A virtual community to help connect professionals with similar skills, interests or passions.
 
 #User
-    has_many :memberships
-    has_many :groups, through :memberships
+    has_many :topics
+    has_many :groups
+    has_many :topic_groups, through: :topics, source: :group
     email
     password_digest
     profession
@@ -12,8 +13,8 @@ A virtual community to help connect professionals with similar skills, interests
     skills
 
 #Group
-    has_many :memberships
-    has_many :users, through :memberships
+    has_many :topics
+    has_many :users, through :topics
     title
     description
     rules
@@ -21,19 +22,13 @@ A virtual community to help connect professionals with similar skills, interests
     creation_date
 
 
-#Membership
+#Topic
 
     belongs_to :user
     belongs_to :group
-    join_date (think of something better)
-    moderator (boolean)
-    ##member_id
+    title
 
 
 #############Do later##############
 
-#Post
-
-    belongs_to :user
-    belongs_to :group
-    text
+#Events

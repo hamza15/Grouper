@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :developer unless Rails.env.production?
-    provider :github, '', ''
+    #provider :github, ENV[''], ENV['']
+    provider :google_oauth2, ENV['GOOGLE_CLIENT_KEY'], ENV['GOOGLE_CLIENT_SECRET'], skip_jwt: true
   end

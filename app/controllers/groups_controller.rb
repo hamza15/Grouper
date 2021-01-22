@@ -26,13 +26,16 @@ class GroupsController < ApplicationController
             @groups = @user.groups
         else
             flash[:message] = "That group does not exist!" if params[:user_id]
-            @groups = Group.all
+            @groups = Group.all.my_groups(current_user.id)
         end
+    end
+
+    def discover
+        @groups = Group.all
     end
 
     def show
         @group = Group.find(params[:id])
-        @memberships = @group.memberships
         redirect_to '/' if !@group
     end
 

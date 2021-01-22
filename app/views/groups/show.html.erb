@@ -13,3 +13,19 @@
 <ul>
     <b><li><%= @group.user.username %></li>
 </ul>
+
+<% if !@group.topics.empty? %>
+  <p><%= link_to 'See all topics', group_topics_path(@group)%></p>
+  <h4>Most Recent Topics:</h4>
+  <% @group.topics.order(updated_at: :desc).limit(3).each do |c|%>
+    <li>
+      <strong><%= c.user.username%></strong> scheduled a meetup to discuss: <%= link_to c.title, group_topic_path(@group,c)%>
+    </li>
+  <% end %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to "Add a Topic", new_group_topic_path(@group) %>

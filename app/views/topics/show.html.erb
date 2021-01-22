@@ -1,0 +1,5 @@
+<h2><%= @topic.title %> - <%= @topic.user.username%></h2>
+
+<% if @topic.user == current_user %>
+  <%= link_to "Edit Topic", edit_topic_path(@topic)%>
+<% end %>
