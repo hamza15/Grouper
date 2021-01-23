@@ -21,6 +21,21 @@ class GroupsController < ApplicationController
         end
     end
 
+    def edit
+        @group = Group.find_by_id(params[:id])
+        redirect_to groups_path if !@group || @group.user != current_user
+    end
+
+    def update
+        @group = Group.find_by(id: params[:id])
+        redirect_to groups_path if !@group || @group.user != current_user
+       if @group.update(group_params)
+         redirect_to group_path(@group)
+       else
+         render :edit
+       end
+     end
+
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @groups = @user.groups

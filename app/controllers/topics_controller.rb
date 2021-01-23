@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    before_action :redirect_if_not_topic_user, only: [:edit, :update]
+    before_action :set_topic, only: [:show, :edit, :update]
     
     def index
         if params[:group_id] && @group = Group.find_by_id(params[:group_id])
@@ -24,10 +24,16 @@ class TopicsController < ApplicationController
     def create
         @topic = current_user.topics.build(topic_params)
         if @topic.save
-        redirect_to topics_path
+            redirect_to topics_path
         else
-        render :new
+            render :new
         end
+    end
+
+    def edit
+    end
+
+    def show
     end
 
     def update
@@ -38,10 +44,7 @@ class TopicsController < ApplicationController
         end
     end
 
-    def show
-        @topic = Topic.find_by_id(params[:id])
-        redirect_to topics_path if !@topic
-    end
+    
 
     private
 
@@ -49,8 +52,12 @@ class TopicsController < ApplicationController
         params.require(:topic).permit(:title,:group_id)
     end
 
-    def redirect_if_not_topic_user
-        redirect_to topics_path if @topic.user != current_user
+    def set_topic
+        @topic = Topic.find_by(id: params[:id])
+        if !@topic
+          flash[:message] = "Topic was not found"
+          redirect_to topics_path
+        end
     end
 
 end

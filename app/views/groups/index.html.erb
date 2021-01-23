@@ -1,9 +1,4 @@
 <h1>Groups</h1>
 
-<ul>
-<% @groups.each do |group| %>
 
-
-        <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li><br><br>
-<% end %>
-</ul> 
+<%= render partial: "groups", locals: {object: @group} %>
