@@ -1,0 +1,9 @@
+<h1><%= @meeting.name %></h1>
+
+
+<p><%= @meeting.group.title %></p>
+<br>
+<br>
+
+<%= link_to 'Delete', @meeting, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to 'All Meetings', meetings_path %>

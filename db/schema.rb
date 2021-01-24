@@ -16,20 +16,17 @@ ActiveRecord::Schema.define(version: 2021_01_21_002947) do
     t.string "title"
     t.string "description"
     t.text "rules"
-    t.integer "user_count", default: 1
-    t.datetime "creation_date"
     t.integer "user_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
-  create_table "memberships", force: :cascade do |t|
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
     t.integer "user_id"
     t.integer "group_id"
-    t.boolean "moderator"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["group_id"], name: "index_memberships_on_group_id"
-    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -43,17 +40,12 @@ ActiveRecord::Schema.define(version: 2021_01_21_002947) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "profession"
-    t.integer "years_of_experience"
-    t.text "skills"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
   end
 
   add_foreign_key "groups", "users"
-  add_foreign_key "memberships", "groups"
-  add_foreign_key "memberships", "users"
   add_foreign_key "topics", "groups"
   add_foreign_key "topics", "users"
 end

@@ -1,16 +1,14 @@
 Grouper models
 
-A virtual community to help connect professionals with similar skills, interests or passions.
+A virtual community to help connect professionals with similar skills, interests or passions and schedule meetups.
 
 #User
     has_many :topics
     has_many :groups
     has_many :topic_groups, through: :topics, source: :group
+    username
     email
     password_digest
-    profession
-    years_of_experience
-    skills
 
 #Group
     has_many :topics
@@ -18,8 +16,6 @@ A virtual community to help connect professionals with similar skills, interests
     title
     description
     rules
-    user_count
-    creation_date
 
 
 #Topic
@@ -32,3 +28,5 @@ A virtual community to help connect professionals with similar skills, interests
 #############Do later##############
 
 #Events
+    belongs_to :group
+    name

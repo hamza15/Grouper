@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'sessions#home'
 
-  get '/auth/:provider/callback' => 'sessions#google'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -21,4 +21,10 @@ Rails.application.routes.draw do
     resources :topics
   end
   resources :topics
+
+  resources :meetings
+  
+  resources :groups do
+    resources :meetings
+  end
 end

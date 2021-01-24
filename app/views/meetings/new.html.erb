@@ -1,0 +1,31 @@
+<% if @meeting.group %>
+    <h1>New Meetup for <%= @meeting.group.title%>!</h1>
+<% else %>
+    <h1>New Meetup!</h1>
+<% end %>
+
+
+
+
+<%= form_for([@meeting.group,@meeting]) do |f| %>
+
+    <% if !@meeting.group %>
+        <%= f.label :group %>
+        <%= f.collection_select :group_id, @groups, :id, :title %>
+    <% else %>
+        <%= f.hidden_field :group_id %>
+    <% end %>
+
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+
+    <%= f.label :start_time %>
+    <%=f.datetime_field :start_time %>
+    <br>
+    <br>
+
+    <%= f.submit %>
+<% end %>

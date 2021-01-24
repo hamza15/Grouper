@@ -1,0 +1,16 @@
+
+<br>
+<br>
+<%= month_calendar(events: @meetings) do  |date, meetings| %>
+    <%= date %>
+
+    <% meetings.each do |meeting| %>
+        <div>
+            <%= link_to meeting.name, meeting_path(meeting) %>
+        </div>
+        
+    <% end %>
+<% end %>
+<br>
+
+<%= link_to "Add New Meetup", new_group_meeting_path(@group) %><br>
