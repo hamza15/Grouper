@@ -4,8 +4,4 @@
   <h1>Topic Discovery</h1>
 <% end %>
 
-<ul>
-<% @topics.each do |topic|%>
-  <li><strong><%= link_to topic.title, topic_path(topic) %></strong> - Created by: <%= topic.user.username%></li>
-<% end %>
-</ul>
+<%= render partial: "topics", locals: {object: @topics} %>

@@ -13,4 +13,4 @@
 <% end %>
 <br>
 
-<%= link_to "Add New Meetup", new_group_meeting_path(@group) %><br>
+<%= link_to "Add New Meetup", new_group_meeting_path(@group) if @group%><br>
