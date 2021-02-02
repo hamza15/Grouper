@@ -1,11 +1,11 @@
-#Grouper
+# Grouper
 
 
-##Concept:
+## Concept:
 A virtual community to help connect professionals with similar skills, interests or passions and schedule meetups.
 
 
-##Stack:
+## Stack:
 
 - ActiveRecord
 - SQLite3
@@ -14,7 +14,7 @@ A virtual community to help connect professionals with similar skills, interests
 - Simple Calendar
 - Omniauth Google
 
-##Future Improvements:
+## Future Improvements:
 
 - Add CSS for all the views.
 - Improve Calendar layout.
