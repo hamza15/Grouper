@@ -1,24 +1,24 @@
-# README
+#Grouper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##Concept:
+A virtual community to help connect professionals with similar skills, interests or passions and schedule meetups.
 
-* Ruby version
 
-* System dependencies
+##Stack:
 
-* Configuration
+- ActiveRecord
+- SQLite3
+- Bcrypt
+- Ruby on Rails
+- Simple Calendar
+- Omniauth Google
 
-* Database creation
+##Future Improvements:
 
-* Database initialization
+- Add CSS for all the views.
+- Improve Calendar layout.
+- Create a Group admin and introduce memberships to groups with permissions such as moderator and viewer profiles.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
