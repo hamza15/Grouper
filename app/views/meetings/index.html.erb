@@ -12,5 +12,7 @@
     <% end %>
 <% end %>
 <br>
-
+<% if !@groups%>
+    <em> In order to view meet-ups for a specific group, select the Group and then view all meet-ups. Or -----> </em>
+<% end %> 
 <%= link_to "Add New Meetup", new_group_meeting_path(@group) if @group%><br>

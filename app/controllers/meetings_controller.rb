@@ -1,5 +1,7 @@
 class MeetingsController < ApplicationController
 
+    before_action :redirect_if_not_logged_in
+
     def index
         if params[:group_id] && @group = Group.find_by_id(params[:group_id])
             @meetings = @group.meetings

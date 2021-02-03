@@ -4,7 +4,6 @@ class Group < ApplicationRecord
     has_many :users, through: :topics
 
     has_many :meetings
-    #has_many :users, through: :meetings
 
     accepts_nested_attributes_for :meetings
 
@@ -20,12 +19,4 @@ class Group < ApplicationRecord
         )
     }
 
-    def meeting_attributes=(meeting_attributes)
-        meeting_attributes.values.each do |meeting_attribute|
-            if meeting_attribute[:name].present?
-                meeting = Meeting.find_or_create_by(meeting_attribute)
-                self.meetings << meeting
-            end
-        end
-    end
 end
