@@ -1,5 +1,5 @@
 <ul>
 <% @topics.each do |topic|%>
-  <li><strong><%= link_to topic.title, topic_path(topic) %></strong> - Created by: <%= topic.user.username%></li>
+  <li><strong><%= link_to topic.title, topic_path(topic) %></strong> - Created by: <b><%= topic.user.username%></b> for Group: <b> <%=topic.group.title%> </b></li><br><br>
 <% end %>
 </ul>

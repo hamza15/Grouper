@@ -22,12 +22,16 @@ class TopicsController < ApplicationController
     end
       
     def create
+      if params[:group_id] && @group = Group.find_by_id(params[:group_id])
         @topic = current_user.topics.build(topic_params)
         if @topic.save
-            redirect_to topics_path
+            redirect_to group_topics_path
         else
             render :new
         end
+      else
+        redirect_to '/'
+      end
     end
 
     def edit
@@ -44,7 +48,15 @@ class TopicsController < ApplicationController
         end
     end
 
-    
+    def destroy
+        @topic = Topic.find(params[:id])
+        if @topic.user == current_user
+          @topic.destroy
+          redirect_to topics_url
+        else
+          render :show
+        end
+    end
 
     private
 

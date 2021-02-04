@@ -26,7 +26,7 @@
   <h4>Most Recent Topics:</h4>
   <% @group.topics.order(updated_at: :desc).limit(3).each do |c|%>
     <li>
-      <strong><%= c.user.username%></strong> scheduled a meetup to discuss: <%= link_to c.title, group_topic_path(@group,c)%>
+      <strong><%= c.user.username%></strong> created a topic to discuss: <%= link_to c.title, group_topic_path(@group,c)%>
     </li>
   <% end %>
 <% end %>
