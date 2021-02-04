@@ -54,6 +54,11 @@ class GroupsController < ApplicationController
         redirect_to '/' if !@group
     end
 
+    def search
+        @all_groups = Group.all
+        @groups = @all_groups.search(params[:query])
+    end
+
     private
 
     def group_params

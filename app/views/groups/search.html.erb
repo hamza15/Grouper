@@ -1,0 +1,12 @@
+<h1>Search Results:</h1>
+
+<% if @groups.empty? %>
+    <b><em>This Group does not exist!</b></em>
+    
+<% else %>
+    <ul>
+    <% @groups.each do |group| %>
+        <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li><br><br>
+    <% end %>
+    </ul>
+<% end %>

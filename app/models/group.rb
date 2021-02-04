@@ -5,8 +5,6 @@ class Group < ApplicationRecord
 
     has_many :meetings
 
-    
-
     validates :title, :description, :rules, presence: true
 
     scope :my_groups, -> (user_id) {
@@ -16,6 +14,16 @@ class Group < ApplicationRecord
             WHERE user_id = ?
           )",
    user_id 
+        )
+    }
+
+    scope :search, -> (title) {
+        where(
+            "title IN ( SELECT title
+            FROM groups
+            WHERE title = ?
+        )",
+    title
         )
     }
 

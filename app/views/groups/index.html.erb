@@ -1,8 +1,16 @@
 <h1>Groups</h1>
 
+<%= form_with url: "/search", local: true, method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <ul>
 <% @groups.each do |group| %>
     <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li><br><br>
 <% end %>
 </ul> 
+
+
 
