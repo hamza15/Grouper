@@ -5,7 +5,7 @@ class Group < ApplicationRecord
 
     has_many :meetings
 
-    accepts_nested_attributes_for :meetings
+    
 
     validates :title, :description, :rules, presence: true
 
