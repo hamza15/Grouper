@@ -1,5 +1,19 @@
-<ul>
-<% @groups.each do |group| %>
-    <li> Title: <%= link_to group.title, group_path(group) %> - Created by: <%= group.user.username%></li><br><br>
+<%= form_for(@group) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br>
+    <br>
+
+    <%= f.label :rules %>
+    <%= f.text_field :rules %>
+    <br>
+    <br>
+
+    <%= f.submit %>
 <% end %>
-</ul> 
